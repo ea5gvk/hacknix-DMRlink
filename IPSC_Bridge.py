@@ -163,7 +163,8 @@ class ambeIPSC(IPSC):
 
 
     def private_voice(self, _src_sub, _dst_sub, _ts, _end, _peerid, _data):
-        print('private voice')
+        #print('private voice')
+        #map private voice cqlls as group voice calls
         self.group_voice(_src_sub, _dst_sub, _ts, _end, _peerid, _data)
 
     #************************************************
