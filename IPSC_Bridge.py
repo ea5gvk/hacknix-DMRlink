@@ -164,6 +164,7 @@ class ambeIPSC(IPSC):
 
     def private_voice(self, _src_sub, _dst_sub, _ts, _end, _peerid, _data):
         print('private voice')
+        self.group_voice(_src_sub, _dst_sub, _ts, _end, _peerid, _data)
 
     #************************************************
     #     Debug: print IPSC frame on console
