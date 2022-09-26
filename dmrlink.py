@@ -709,9 +709,7 @@ class IPSC(DatagramProtocol):
                 self.de_register_peer(peer)
                 self.send_to_ipsc(self.PEER_LIST_REPLY_PKT + build_peer_list(self._peers))
                 self._logger.warning('(%s) Timeout Exceeded for Peer %s, De-registering', self._system, int_id(peer))
-		outputFile = open("/tmp/" + self._system + ".peers")
-		outputFile.write(len(self._peers))
-		outputFile.close
+		os.environ("DMRLINK_" + self,_system") = str(len(self._peers))
     
     # Timed loop used for IPSC connection Maintenance when we are a PEER
     #
