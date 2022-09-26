@@ -27,6 +27,7 @@ from __future__ import print_function
 
 # Full imports
 import logging
+import os
 import cPickle as pickle
 
 # Function Imports
@@ -709,6 +710,7 @@ class IPSC(DatagramProtocol):
                 self.de_register_peer(peer)
                 self.send_to_ipsc(self.PEER_LIST_REPLY_PKT + build_peer_list(self._peers))
                 self._logger.warning('(%s) Timeout Exceeded for Peer %s, De-registering', self._system, int_id(peer))
+		os.environ("DMRLINK_" + self._system) = str(len(self._peers))
     
     # Timed loop used for IPSC connection Maintenance when we are a PEER
     #
