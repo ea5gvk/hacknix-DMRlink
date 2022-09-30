@@ -712,6 +712,7 @@ class IPSC(DatagramProtocol):
                 self._logger.warning('(%s) Timeout Exceeded for Peer %s, De-registering', self._system, int_id(peer))
 	outputFile = open("/statefiles/" + self._system + ".state",w)
 	outputFile.write(str(len(self._peers)))
+	self._logger.info('(%) filewrite', self._system))
 	outputFile.close()
     
     # Timed loop used for IPSC connection Maintenance when we are a PEER
