@@ -713,7 +713,6 @@ class IPSC(DatagramProtocol):
 	fn = "/statefiles/" +  self._system + ".state"
 	outputFile = open(fn,"w")
 	outputFile.write(str(len(self._peers)))
-	self._logger.info('(%) filewrite: %s', self._system,fn)
 	outputFile.close()
     
     # Timed loop used for IPSC connection Maintenance when we are a PEER
